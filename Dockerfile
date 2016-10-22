@@ -1,26 +1,25 @@
 ## BUILDING
 ##   (from project root directory)
-##   $ docker build -t jesseanne-groovy .
+##   $ docker build -t java-for-jesseanne-groovy .
 ##
 ## RUNNING
-##   $ docker run -p 80:80 jesseanne-groovy
-##
-## CONNECTING
-##   Lookup the IP of your active docker host using:
-##     $ docker-machine ip $(docker-machine active)
-##   Connect to the container at DOCKER_IP:80
-##     replacing DOCKER_IP for the IP of your active docker host
-##
-## NOTES
-##   This is a prebuilt version of Apache.
-##   For more information and documentation visit:
-##     https://github.com/bitnami/bitnami-docker-apache
+##   $ docker run java-for-jesseanne-groovy
 
-FROM gcr.io/bitnami-containers/apache:2.4.23-r1
+FROM gcr.io/stacksmith-images/ubuntu-buildpack:14.04-r10
 
-ENV STACKSMITH_STACK_ID="oxal6ny" \
-    STACKSMITH_STACK_NAME="jesseanne/groovy" \
-    STACKSMITH_STACK_PRIVATE="1" \
-    BITNAMI_CONTAINER_ORIGIN="stacksmith"
+MAINTAINER Bitnami <containers@bitnami.com>
+
+ENV STACKSMITH_STACK_ID="ebms5cp" \
+    STACKSMITH_STACK_NAME="Java for jesseanne/groovy" \
+    STACKSMITH_STACK_PRIVATE="1"
+
+RUN bitnami-pkg install java-1.8.0_111-0 --checksum a40aa0c9553e13bd8ddcc3d2ba966492b79d4f73d47cb1499c9ec54f441201eb
+
+ENV PATH=/opt/bitnami/java/bin:$PATH \
+    JAVA_HOME=/opt/bitnami/java
 
 ## STACKSMITH-END: Modifications below this line will be unchanged when regenerating
+
+# Java base template
+COPY . /app
+WORKDIR /app
