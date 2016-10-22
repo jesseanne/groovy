@@ -1,25 +1,25 @@
 ## BUILDING
 ##   (from project root directory)
-##   $ docker build -t jesseanne-groovy .
+##   $ docker build -t mongodb-for-jesseanne-groovy .
 ##
 ## RUNNING
-##   $ docker run -p 80:80 jesseanne-groovy
+##   $ docker run -p 27017:27017 mongodb-for-jesseanne-groovy
 ##
 ## CONNECTING
 ##   Lookup the IP of your active docker host using:
 ##     $ docker-machine ip $(docker-machine active)
-##   Connect to the container at DOCKER_IP:80
+##   Connect to the container at DOCKER_IP:27017
 ##     replacing DOCKER_IP for the IP of your active docker host
 ##
 ## NOTES
-##   This is a prebuilt version of Apache.
+##   This is a prebuilt version of MongoDB.
 ##   For more information and documentation visit:
-##     https://github.com/bitnami/bitnami-docker-apache
+##     https://github.com/bitnami/bitnami-docker-mongodb
 
-FROM gcr.io/bitnami-containers/apache:2.4.23-r1
+FROM gcr.io/bitnami-containers/mongodb:3.2.7-r1
 
-ENV STACKSMITH_STACK_ID="oxal6ny" \
-    STACKSMITH_STACK_NAME="jesseanne/groovy" \
+ENV STACKSMITH_STACK_ID="o9ust89" \
+    STACKSMITH_STACK_NAME="MongoDB for jesseanne/groovy" \
     STACKSMITH_STACK_PRIVATE="1" \
     BITNAMI_CONTAINER_ORIGIN="stacksmith"
 
