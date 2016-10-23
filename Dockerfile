@@ -1,9 +1,9 @@
 ## BUILDING
 ##   (from project root directory)
-##   $ docker build -t jesseanne-groovy .
+##   $ docker build -t nginx-for-jesseanne-groovy .
 ##
 ## RUNNING
-##   $ docker run -p 80:80 jesseanne-groovy
+##   $ docker run -p 80:80 nginx-for-jesseanne-groovy
 ##
 ## CONNECTING
 ##   Lookup the IP of your active docker host using:
@@ -12,14 +12,14 @@
 ##     replacing DOCKER_IP for the IP of your active docker host
 ##
 ## NOTES
-##   This is a prebuilt version of Apache.
+##   This is a prebuilt version of nginx.
 ##   For more information and documentation visit:
-##     https://github.com/bitnami/bitnami-docker-apache
+##     https://github.com/bitnami/bitnami-docker-nginx
 
-FROM gcr.io/bitnami-containers/apache:2.4.23-r1
+FROM gcr.io/bitnami-containers/nginx:1.10.1-r0
 
-ENV STACKSMITH_STACK_ID="oxal6ny" \
-    STACKSMITH_STACK_NAME="jesseanne/groovy" \
+ENV STACKSMITH_STACK_ID="avqf4mo" \
+    STACKSMITH_STACK_NAME="nginx for jesseanne/groovy" \
     STACKSMITH_STACK_PRIVATE="1" \
     BITNAMI_CONTAINER_ORIGIN="stacksmith"
 
