@@ -1,9 +1,9 @@
 ## BUILDING
 ##   (from project root directory)
-##   $ docker build -t jesseanne-groovy .
+##   $ docker build -t apache-for-jesseanne-groovy .
 ##
 ## RUNNING
-##   $ docker run -p 80:80 jesseanne-groovy
+##   $ docker run -p 80:80 apache-for-jesseanne-groovy
 ##
 ## CONNECTING
 ##   Lookup the IP of your active docker host using:
@@ -18,8 +18,8 @@
 
 FROM gcr.io/bitnami-containers/apache:2.4.23-r1
 
-ENV STACKSMITH_STACK_ID="oxal6ny" \
-    STACKSMITH_STACK_NAME="jesseanne/groovy" \
+ENV STACKSMITH_STACK_ID="tumkq5j" \
+    STACKSMITH_STACK_NAME="Apache for jesseanne/groovy" \
     STACKSMITH_STACK_PRIVATE="1" \
     BITNAMI_CONTAINER_ORIGIN="stacksmith"
 
